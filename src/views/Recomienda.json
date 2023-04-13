@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "img": "user1.jpg",
+        "nickname": "Shadow Caster",
+        "recomienda": "Este portal me ha ayudado a encontrar los mejores profesionales."
+    },
+    {
+        "id": 2,
+        "img": "user2.jpg",
+        "nickname": "Velvet Thunder",
+        "recomienda": "Chambeaya es una excelente opción para buscar oficios de calidad a precios justos."
+    },
+    {
+        "id": 3,
+        "img": "user3.jpg",
+        "nickname": "Phoenix Rising",
+        "recomienda": "Encontré al mejor carpintero gracias a Chambeaya, lo recomiendo totalmente."
+    },
+    {
+        "id": 4,
+        "img": "user4.jpg",
+        "nickname": "Midnight Voyager",
+        "recomienda": "Excelente portal para encontrar personas confiables y profesionales en cualquier área."
+    }
+    
+]

@@ -1,0 +1,11 @@
+{
+    "anuncios": [
+        {
+            "nickname": "Juan123",
+            "postalCode": "08001",
+            "occupation": "Carpintero",
+            "phone": "123456789",
+            "email": "juan123@example.com"
+        }
+    ]
+}

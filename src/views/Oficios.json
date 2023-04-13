@@ -1,0 +1,268 @@
+{
+    "oficios": [
+        {
+            "id": 1,
+            "name": "Afilador"
+        },
+        {
+            "id": 2,
+            "name": "Albañil"
+        },
+        {
+            "id": 3,
+            "name": "Alpinista"
+        },
+        {
+            "id": 4,
+            "name": "Asistente"
+        },
+        {
+            "id": 5,
+            "name": "Azulejero"
+        },
+        {
+            "id": 6,
+            "name": "Basurero"
+        },
+        {
+            "id": 7,
+            "name": "Bolero"
+        },
+        {
+            "id": 8,
+            "name": "Camionero"
+        },
+        {
+            "id": 9,
+            "name": "Cantinero"
+        },
+        {
+            "id": 10,
+            "name": "Carpintero"
+        },
+        {
+            "id": 11,
+            "name": "Cerrajero"
+        },
+        {
+            "id": 12,
+            "name": "Chatarrero"
+        },
+        {
+            "id": 13,
+            "name": "Chofer"
+        },
+        {
+            "id": 14,
+            "name": "Coach"
+        },
+        {
+            "id": 15,
+            "name": "Cobrador"
+        },
+        {
+            "id": 16,
+            "name": "Cocinero"
+        },
+        {
+            "id": 17,
+            "name": "Comediante"
+        },
+        {
+            "id": 18,
+            "name": "Cuidadora"
+        },
+        {
+            "id": 19,
+            "name": "Diablero"
+        },
+        {
+            "id": 20,
+            "name": "Dietista"
+        },
+        {
+            "id": 21,
+            "name": "Electricista"
+        },
+        {
+            "id": 22,
+            "name": "Entrenador"
+        },
+        {
+            "id": 23,
+            "name": "Entrevistador"
+        },
+        {
+            "id": 24,
+            "name": "Escultor"
+        },
+        {
+            "id": 25,
+            "name": "Estilista"
+        },
+        {
+            "id": 26,
+            "name": "Franelero"
+        },
+        {
+            "id": 27,
+            "name": "Gasero"
+        },
+        {
+            "id": 28,
+            "name": "Guardaespaldas"
+        },
+        {
+            "id": 29,
+            "name": "Guardavidas"
+        },
+        {
+            "id": 30,
+            "name": "Guardia"
+        },
+        {
+            "id": 31,
+            "name": "Guía de turismo"
+        },
+        {
+            "id": 32,
+            "name": "Herrero"
+        },
+        {
+            "id": 33,
+            "name": "Impresor"
+        },
+        {
+            "id": 34,
+            "name": "Instructor"
+        },
+        {
+            "id": 35,
+            "name": "Investigador"
+        },
+        {
+            "id": 36,
+            "name": "Jardinero"
+        },
+        {
+            "id": 37,
+            "name": "Locutor"
+        },
+        {
+            "id": 38,
+            "name": "Luchador"
+        },
+        {
+            "id": 39,
+            "name": "Mariachi"
+        },
+        {
+            "id": 40,
+            "name": "Masajista"
+        },
+        {
+            "id": 41,
+            "name": "Mecánico"
+        },
+        {
+            "id": 42,
+            "name": "Misionero"
+        },
+        {
+            "id": 43,
+            "name": "Nana"
+        },
+        {
+            "id": 44,
+            "name": "Navegante"
+        },
+        {
+            "id": 45,
+            "name": "Orfebre"
+        },
+        {
+            "id": 46,
+            "name": "Panadero"
+        },
+        {
+            "id": 47,
+            "name": "Paramédico"
+        },
+        {
+            "id": 48,
+            "name": "Payaso"
+        },
+        {
+            "id": 49,
+            "name": "Peluquero"
+        },
+        {
+            "id": 50,
+            "name": "Pescador"
+        },
+        {
+            "id": 51,
+            "name": "Pintor"
+        },
+        {
+            "id": 52,
+            "name": "Plomero"
+        },
+        {
+            "id": 53,
+            "name": "Poeta"
+        },
+        {
+            "id": 54,
+            "name": "Predicador"
+        },
+        {
+            "id": 55,
+            "name": "Prefecto"
+        },
+        {
+            "id": 56,
+            "name": "Rescatista"
+        },
+        {
+            "id": 57,
+            "name": "Secretaria"
+        },
+        {
+            "id": 58,
+            "name": "Sirvienta"
+        },
+        {
+            "id": 59,
+            "name": "Taquero"
+        },
+        {
+            "id": 60,
+            "name": "Traductor"
+        },
+        {
+            "id": 61,
+            "name": "Transportista"
+        },
+        {
+            "id": 62,
+            "name": "Velador"
+        },
+        {
+            "id": 63,
+            "name": "Vendedor"
+        },
+        {
+            "id": 64,
+            "name": "Volantero"
+        },
+        {
+            "id": 65,
+            "name": "Zapatero"
+        },
+        {
+            "id": 66,
+            "name": "OTRO"
+        }
+    ]
+}
