@@ -48,7 +48,7 @@
             <div class="col">
               <button
                 :disabled=buttonDisabled
-                @click="cargaIneoff"
+                @click="perfil"
                 class="btn btn-success"
                 prepend-icon="mdi-cloud-upload">
                 Guardar
@@ -58,7 +58,7 @@
               <a
                 class="btn btn-danger"
                 :disabled=loading
-                href="/ui/official-doc">
+                href="/ui/general-data">
                 Cancelar
               </a>
             </div>
@@ -156,7 +156,7 @@
             this.loading = false;
             this.loader = 'ancho'
             this.resetImage();
-            router.push("/ui/official-doc");
+            router.push("/ui/general-data");
           })
           .catch((error) => {
             this.loading = false;
@@ -166,7 +166,7 @@
             this.$refs.message01.presenta()
           });
       },
-      cargaIneoff: function () {
+      perfil: function () {
         this.loader = 'loader'
         this.loading = true;
         let formd = new FormData();
@@ -179,13 +179,13 @@
         };
   
         axios
-          .post("https://upload.qbits.mx/api/up/upload-identification", formd, { headers })
+          .post("https://upload.qbits.mx/api/up/upload-profile-photo", formd, { headers })
           .then((response) => {
             response;
             this.loading = false;
             this.loader = 'ancho'
             this.resetImage();
-            router.push("/ui/official-doc");
+            router.push("/ui/general-data");
           })
           .catch((error) => {
             this.loading = false;
