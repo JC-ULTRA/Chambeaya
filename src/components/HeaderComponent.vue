@@ -17,14 +17,15 @@
                 </form>
                 <ul class="navbar-nav center">
                     <div class="user-info">
-                        <span v-if="nick">{{ nick }}</span>
-                        <router-link v-else :to="{ name: 'login' }">Ingresar</router-link>
+
+
                     </div>
                     <li class="nav-item login">
-                        <a class="nav-link" href="/ui/login">Login</a>
+                        <span v-if="nick">{{ nick }}</span>
+                        <router-link v-else :to="{ name: 'login' }">Login</router-link>
                     </li>
                     <li class="nav-item sign">
-                        <a v-on:click="logout" class="nav-link" href="#">Logout</a>
+                        <a v-on:click="handleLogout" class="nav-link" href="#">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -33,7 +34,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
     name: "HeaderComponent",
@@ -42,15 +43,19 @@ export default {
             nick: (state) => state.userData.nick,
         }),
     },
-    
     methods: {
-        logout() {
+        ...mapMutations({
+            clearUserData: "clearUserData",
+        }),
+        handleLogout() {
+            this.clearUserData();
             localStorage.clear();
             this.$router.push({ name: 'login' })
-        }
-    }
-}
+        },
+    },
+};
 </script>
+
 
 <style scoped>
 .cabecera {
@@ -85,4 +90,5 @@ export default {
     margin: 2px;
     border: 2px solid;
     background: #ff9900c0;
-}</style>
+}
+</style>
