@@ -1,62 +1,69 @@
 <template>
-    <body>
-        <div>
-            <HeaderComponent />
-            <div class="d-md-block col-md-3">
-                <SideBarComponent />
-            </div>
-            <main class="container pt-5 hoja">
+    <div>
+        <HeaderComponent />
+        <SideBarComponent />
 
-                <div>
-                    <h1 class="text-center mb-5">Captura de identificación oficial</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
                 </div>
 
-                <form>
-                    <div v-if="loadedImages < maxImagesAllowed" class="row justify-content-center">
-                        <div class="col-sm-6 col-md-4 mb-4">
-                            <label>Identificación oficial anverso</label>
-                            <div class="mb-3">
-                                <a href="/ui/upload">
-                                    <img src="../assets/anverso.png" alt="Identificación oficial anverso"
-                                        class="img-fluid mb-2 img-thumbnail fa-fade"
-                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;  width: 200px; height: 125px; ">
-                                </a>
+                <div class="col-md-9">
+                    <main class="container pt-5 hoja">
+                        <h1 class="text-center mb-5">Captura de identificación oficial</h1>
+
+                        <form>
+                            <div v-if="loadedImages < maxImagesAllowed" class="row justify-content-center">
+                                <div class="col-sm-6 col-md-4 mb-4">
+                                    <label class="d-block text-center">Identificación oficial anverso</label>
+                                    <div class="mb-3">
+                                        <a href="/ui/upload">
+                                            <img src="../assets/anverso.png" alt="Identificación oficial anverso"
+                                                class="img-fluid mb-2 img-thumbnail fa-fade"
+                                                style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;  width: 200px; height: 125px;">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-4 mb-4">
+                                    <label class="d-block text-center">Identificación oficial reverso</label>
+                                    <div class="mb-3">
+                                        <a href="/ui/upload">
+                                            <img src="../assets/reverso.png" alt="Identificación oficial reverso"
+                                                class="img-fluid mb-2 img-thumbnail fa-fade"
+                                                style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6; width: 200px; height: 125px;">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-6 col-md-4 mb-4">
-                            <label>Identificación oficial reverso</label>
-                            <div class="mb-3">
-                                <a href="/ui/upload">
-                                    <img src="../assets/reverso.png" alt="Identificación oficial reverso"
-                                        class="img-fluid mb-2 img-thumbnail fa-fade"
-                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6; width: 200px; height: 125px;">
-                                </a>
+                            <div v-else class="text-center mb-5">
+                                <h2 class="animated-border">Identificaciones completas</h2>
                             </div>
-                        </div>
-                    </div>
-                    <div v-else class="mb-5">
-                        <h2 class="animated-border">Identificaciones completas</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4 mb-4 elemento position-relative" v-for="imagen in imagenes" v-bind:key="imagen.id" >
-                                <img :src="muestraimg(imagen.fullHttpUploadUrl)" class="img-fluid mb-2 img-thumbnail"
-                        style="width: 400px; height: 200px;" />
-                                <i class="fa-solid fa-trash  fa-2xl position-absolute top-0 end-0 border border-light"
-                                style="color: #d65c5c;" @click="elimina(imagen)"><button type="submit" class="btn btn1"></button></i>
-                        </div>
-                    </div><i ></i>
-                    <div class="d-grid pb-5 mt-5 col-2 mx-auto">
-                        <button type="submit" class="btn btn1">Enviar</button>
-                    </div>
-                </form>
 
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4 mb-4 elemento position-relative" v-for="imagen in imagenes"
+                                    v-bind:key="imagen.id">
+                                    <img :src="muestraimg(imagen.fullHttpUploadUrl)" class="img-fluid mb-2 img-thumbnail"
+                                        style="width: 400px; height: 200px;" />
+                                    <i class="fa-solid fa-trash fa-2xl position-absolute top-0 end-0 border border-light"
+                                        style="color: #d65c5c;" @click="elimina(imagen)"></i>
+                                </div>
+                            </div>
 
-            </main>
-            <FooterComponent />
+                            <div class="d-grid pb-5 mt-5 col-3 mx-auto">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </form>
+                    </main>
+                </div>
+            </div>
         </div>
-    </body>
+
+        <FooterComponent />
+    </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -139,10 +146,6 @@ export default {
 </script>
 
 <style scoped>
-.ordenar img {
-    display: block;
-}
- 
 
 
 div.row {
@@ -150,25 +153,9 @@ div.row {
     gap: 10%;
 }
 
-.ordenar button {
-    display: block;
-}
-
 .hoja {
     background: #a5a5a5dc;
-}
-
-.ordenar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: whitesmoke;
-    border-radius: 10px;
-}
-
-.btn1 {
-    background: #8BC34A;
+    border-radius: 15px;
 }
 
 h1 {
@@ -194,9 +181,5 @@ body {
 #titulo:hover {
     cursor: crosshair;
     color: darkblue;
-}
-
-.btn1:hover {
-    color: white;
 }
 </style>

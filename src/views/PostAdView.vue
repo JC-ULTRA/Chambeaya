@@ -2,7 +2,7 @@
   <body>
     <HeaderComponent />
     <SideBarComponent />
-    <main class="container pt-5 hoja">
+    <main class="container pt-5 hoja" style="background-color: rgba(173, 216, 230, 0.5); border-radius: 15px;">
       <h1>Publicación de anuncio</h1>
 <ImageCropper />
       <form>
