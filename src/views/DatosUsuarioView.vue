@@ -4,7 +4,7 @@
         <SideBarComponent />
         <form class="container mb-5" style="text-align: center; border-radius: 15px;">
             <div
-                style="text-align: center; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center;">
+                style="text-align: center; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;">
                 <div>
                     <h1 class="mb-5">Datos de Usuario</h1>
                 </div>
@@ -20,52 +20,98 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="form-group">
-                    <label class="mt-3">Nombre<span class=" "></span>:</label>
-                    <input type="" class="form-control"> <p>{{ usuario.name }}</p>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Nombre:</label>
+                        <div class="box">
+                            <p>{{ usuario.name }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Apellido Paterno<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Apellido Paterno:</label>
+                        <div class="box">
+                            <p>{{ usuario.apepaterno }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Apellido Materno:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Apellido Materno:</label>
+                        <div class="box">
+                            <p></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Número telefónico personal<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Teléfono principal:</label>
+                        <div class="box">
+                            <p>{{ usuario.emailpro }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Correo electrónico personal<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Email personal:</label>
+                        <div class="box">
+                            <p>{{ usuario.date }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Fecha de nacimiento<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Fecha de nacimiento:</label>
+                        <div class="box">
+                            <p>{{ usuario.cp }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Código postal personal<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Código postal:</label>
+                        <div class="box">
+                            <p>{{ usuario.nickname }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Nickname<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Nickname:</label>
+                        <div class="box">
+                            <p>{{ usuario.oficio }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Oficio<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Oficio:</label>
+                        <div class="box">
+                            <p>{{ usuario.phonework }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">Nùmero negocio<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">Nùmero negocio:</label>
+                        <div class="box">
+                            <p>{{ usuario.cpwork }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="mt-3">CP negocio<span class=" "></span>:</label>
-                    <input type="" class="form-control" />
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <label class="mt-3">CP negocio:</label>
+                        <div class="box">
+                            <p>{{ usuario.phonepro }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </form>
         <FooterComponent />
     </body>
@@ -151,6 +197,22 @@ export default {
 </script>
 
 <style scoped>
+.box {
+    background: #0040807c;
+    border: 2px solid aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    width: 190px;
+}
+
+p {
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #F2F2F2;
