@@ -1,12 +1,14 @@
 {
-    "name": "Juan",
-    "apepaterno": "García",
-    "phonepro": "555-123-4567",
-    "emailpro": "juan.garcia@example.com",
-    "date": "1985-10-15",
-    "cp": "07080",
-    "nickname": "Juanito",
-    "oficio": "Plomero",
-    "phonework": "555-765-4321",
-    "cpwork": "07090"
+    "usuario": {
+        "name": "Juan",
+        "apepaterno": "García",
+        "phonepro": "555-123-4567",
+        "emailpro": "juan.garcia@example.com",
+        "date": "1985-10-15",
+        "cp": "07080",
+        "nickname": "Juanito",
+        "oficio": "Plomero",
+        "phonework": "555-765-4321",
+        "cpwork": "07090"
+    }
 }

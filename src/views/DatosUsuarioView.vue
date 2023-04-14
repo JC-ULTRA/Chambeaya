@@ -6,103 +6,69 @@
             <div
                 style="text-align: center; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center;">
                 <div>
-                    <h1 class="mb-5">Captura tus datos</h1>
+                    <h1 class="mb-5">Datos de Usuario</h1>
                 </div>
                 <div class="form-group">
-                    <a v-if="loadedImages < maxImagesAllowed" href="/ui/upload-pro" style="text-decoration: none;"><label
-                            class="mt-3">Sube tu foto</label></a>
+                    <a v-if="loadedImages < maxImagesAllowed" href="/ui/upload-pro" style="text-decoration: none;">
+                        <label class="mt-3">Sube tu foto</label>
+                    </a>
                     <label v-else class="mt-3">Foto de perfil:</label>
                     <div class="quita" style="display: flex; flex-direction: column; align-items: center;">
                         <img :src="imagenperfil(imagen.fullHttpUploadUrl)" alt="" class="rounded img" />
                         <a href="/ui/general-data" class="fa-solid fa-trash" style="color: #ff24247c; margin-top: 5px;"
                             @click="elimina(imagen)"></a>
                     </div>
-
                 </div>
             </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <label class="mt-3">Nombre<span class=" red">*</span>:</label>
-                            <input type="text" placeholder="Ingresa tu nombre"  class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label class="mt-3">Apellido Paterno<span class=" red">*</span>:</label>
-                            <input class="mt-3 form-control" type="text" placeholder="Ingresa tu apellido paterno" />
-                        </div>
-                        <div class="form-group">
-                            <label class="mt-3">Apellido Materno:</label>
-                            <input class="mt-3 form-control" type="text" placeholder="Ingresa tu apellido materno"
-                                v-model="apellidoMaterno" />
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <label class="mt-3">Número telefónico personal<span class=" red">*</span>:</label>
-                            <input class="mt-3 form-control" type="tel" placeholder="1122 334 455"  />
-                        </div>
-                        <div class="form-group">
-                            <label class="mt-3">Correo electrónico personal<span class=" red">*</span>:</label>
-                            <input class="mt-3 form-control" type="email" placeholder="pedroparamo@gmail.com" />
-                        </div>
-                        <div class="form-group">
-                            <label class="mt-3">Fecha de nacimiento<span class=" red">*</span>:</label>
-                            <input type="date"  class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label class="mt-3">Código postal personal<span class=" red">*</span>:</label>
-                            <input class="col-2 form-control" type="text" placeholder="00000"  />
-                        </div>
-                    </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                    <label class="mt-3">Nombre<span class=" "></span>:</label>
+                    <input type="" class="form-control"> <p>{{ usuario.name }}</p>
                 </div>
-            </div>
-
-            <div class="mt-4">
-                ¿Eres anunciante?
-                <input type="checkbox" v-model="esAnunciante" />
-            </div>
-
-            <div v-if="esAnunciante" style="text-align: justify;">
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <label>
-                            Nickname<span class=" red">*</span>:
-                            <input type="text" placeholder="Ingresa un nickname" v-model="nickname"  />
-                        </label>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="oficios">Elige tu oficio:</label>
-                        <select id="oficios" class="form-select mt-3" v-model="oficio" >
-                            <option disabled value="">Selecciona un oficio</option>
-                            <option v-for="oficio in oficios" :value="oficio.name" :key="oficio.id">{{ oficio.name }}
-                            </option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label class="mt-3">Apellido Paterno<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="mt-3">
-                            Número telefónico del negocio<span class=" red">*</span>:
-                            <input type="tel" placeholder="1122 334 455"  />
-                        </label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="mt-3">
-                            Código postal personal<span class=" red">*</span>:
-                            <input class="form-control" type="text" placeholder="00000"  />
-                        </label>
-                    </div>
+                <div class="form-group">
+                    <label class="mt-3">Apellido Materno:</label>
+                    <input type="" class="form-control" />
                 </div>
-            </div>
-
-            <div class="d-grid pb-5 mt-5 col-2 mx-auto">
-                <a href="/ui/datosUsuario" type="submit" class="btn btn1">Enviar</a>
+                <div class="form-group">
+                    <label class="mt-3">Número telefónico personal<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Correo electrónico personal<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Fecha de nacimiento<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Código postal personal<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Nickname<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Oficio<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Nùmero negocio<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">CP negocio<span class=" "></span>:</label>
+                    <input type="" class="form-control" />
+                </div>
             </div>
         </form>
+        <FooterComponent />
     </body>
-    <FooterComponent />
 </template>
 
 <script>
@@ -112,6 +78,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
 import info from '@/views/Oficios.json';
 import SideBarComponent from '@/components/SideBarComponent.vue';
 import store from '@/store';
+import usuario from '@/views/GeneralData.json'
 
 
 export default {
@@ -129,6 +96,7 @@ export default {
             idUser: store.state.userData.idUser,
             maxImagesAllowed: 1,
             loadedImages: 0,
+            usuario: usuario.usuario,
         };
     },
     mounted() {
@@ -248,10 +216,6 @@ input[type="submit"]:hover {
     background-color: #004080;
 }
 
-. {
-    color: #FF0000;
-}
-
 .col-2 {
     width: 40%;
 }
@@ -333,8 +297,8 @@ h1 {
     line-height: 1.2;
 }
 
-.red {
-    color: red;
+. {
+    color: ;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
 }
