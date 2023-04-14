@@ -1,4 +1,4 @@
-RUTA=/home/ubuntu/development/code/practica-vue/pictures-docker
+RUTA=/home/ubuntu/development/code/jc/Chambeaya/pictures-docker
 
 docker stop images
 docker rm images

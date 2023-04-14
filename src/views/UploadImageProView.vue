@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="centra">
-      <h1>Seleccione una imagen</h1>
+      <h1>Cargue una Foto de Perfil</h1>
   
       <div class="card">
   
@@ -112,7 +112,7 @@
         userId: store.state.userData.idUser,
         jwt: store.state.userData.jwt,
         profilePicture: def,
-        aspectRadio: 3 / 4,
+        aspectRadio: 1,
         loading: false,
         loader: 'ancho',
         dragover: false,

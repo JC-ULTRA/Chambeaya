@@ -16,6 +16,8 @@ import TermsConditionsView from '@/views/TermsConditionsView'
 import MainMenuView from '@/views/MainMenuView'
 import HomeView from "@/views/HomeView";
 import UploadImageView from "@/views/UploadImageView";
+import UploadImageProView from "@/views/UploadImageProView";
+
 
 const routes = [
 
@@ -29,6 +31,11 @@ const routes = [
     path: '/ui/payment',
     name: 'payment',
     component: PaymentMethodsView
+  },
+  {
+    path: '/ui/upload-pro',
+    name: 'upload-pro',
+    component: UploadImageProView
   },
   {
     path: '/ui/upload',

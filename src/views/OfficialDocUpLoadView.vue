@@ -10,49 +10,46 @@
                 <div>
                     <h1 class="text-center mb-5">Captura de identificación oficial</h1>
                 </div>
+
                 <form>
+                    <div v-if="loadedImages < maxImagesAllowed" class="row justify-content-center">
+                        <div class="col-sm-6 col-md-4 mb-4">
+                            <label>Identificación oficial anverso</label>
+                            <div class="mb-3">
+                                <a href="/ui/upload">
+                                    <img src="../assets/anverso.png" alt="Identificación oficial anverso"
+                                        class="img-fluid mb-2 img-thumbnail fa-fade"
+                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;  width: 200px; height: 125px; ">
+                                </a>
+                            </div>
+                        </div>
 
-    <div v-if="loadedImages < maxImagesAllowed" class="row justify-content-center">
-        <div class="col-sm-6 col-md-4 mb-4">
-            <label>Identificación oficial anverso</label>
-            <div class="mb-3">
-                <a href="/ui/upload">
-                    <img src="../assets/anverso.png" alt="Identificación oficial anverso"
-                        class="img-fluid mb-2 img-thumbnail fa-fade"
-                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;  width: 200px; height: 125px; ">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 mb-4">
-            <label>Identificación oficial reverso</label>
-            <div class="mb-3">
-                <a href="/ui/upload">
-                    <img src="../assets/reverso.png" alt="Identificación oficial reverso"
-                        class="img-fluid mb-2 img-thumbnail fa-fade"
-                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6; width: 200px; height: 125px;">
-                </a>
-            </div>
-</div>
-        </div>
-
-        <div v-else>
-            <h1>El máximo de imágenes permitido ha sido alcanzado</h1>
-        </div>
-
-        <div class="row">
-                <div class="col-sm-6 col-md-4 mb-4"  v-for="imagen in imagenes" :key="imagen.id">
-                    <img :src="getImagenUrl(imagen.fullHttpUploadUrl)" alt="identificación"
-                        class="img-fluid mb-2 img-thumbnail"
-                        style="width: 400px; height: 200px;">
-                </div>
-        </div>
-
-
-    <div class="d-grid pb-5 mt-5 col-2 mx-auto">
-        <button type="submit" class="btn btn1">Enviar</button>
-    </div>
-</form>
+                        <div class="col-sm-6 col-md-4 mb-4">
+                            <label>Identificación oficial reverso</label>
+                            <div class="mb-3">
+                                <a href="/ui/upload">
+                                    <img src="../assets/reverso.png" alt="Identificación oficial reverso"
+                                        class="img-fluid mb-2 img-thumbnail fa-fade"
+                                        style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6; width: 200px; height: 125px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else class="mb-5">
+                        <h2 class="animated-border">Identificaciones completas</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 mb-4 elemento position-relative" v-for="imagen in imagenes" v-bind:key="imagen.id" >
+                                <img :src="muestraimg(imagen.fullHttpUploadUrl)" class="img-fluid mb-2 img-thumbnail"
+                        style="width: 400px; height: 200px;" />
+                                <i class="fa-solid fa-trash  fa-2xl position-absolute top-0 end-0 border border-light"
+                                style="color: #d65c5c;" @click="elimina(imagen)"><button type="submit" class="btn btn1"></button></i>
+                        </div>
+                    </div><i ></i>
+                    <div class="d-grid pb-5 mt-5 col-2 mx-auto">
+                        <button type="submit" class="btn btn1">Enviar</button>
+                    </div>
+                </form>
 
 
             </main>
@@ -60,11 +57,13 @@
         </div>
     </body>
 </template>
+
 <script>
 import axios from 'axios';
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import SideBarComponent from '@/components/SideBarComponent.vue';
+import store from '@/store';
 
 export default {
     components: {
@@ -76,37 +75,75 @@ export default {
         return {
             imagenes: [],
             maxImagesAllowed: 2,
-            loadedImages: 0 ,
+            loadedImages: 0,
+            idUser: store.state.userData.idUser,
         }
     },
     mounted() {
-        this.obtenerImagenes();
+        this.carga();
     },
     methods: {
-        subirIne(cargarIne) {
-            this.$refs[cargarIne + 'INE'].click();
-        },
-        obtenerImagenes() {
-            axios.get('https://upload.qbits.mx/api/up/get-user-identification-images/52')
-                .then(response => {
+        carga() {
+            axios
+                .get(
+                    "https://upload.qbits.mx/api/up/get-user-identification-images/" +
+                    this.idUser
+                )
+                .then((response) => {
                     this.imagenes = response.data;
                     this.loadedImages = this.imagenes.length;
+                    console.log(this.imagenes);
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.log(error);
                 });
         },
-        getImagenUrl(fullHttpUploadUrl) {
-            return `https://media.visitanos.net/image${fullHttpUploadUrl}`;
+        elimina: function (imagen) {
+            let tarjeta = document.querySelectorAll(".elemento");
+            console.log("La imagen se ha eliminado correctamente");
+            // Eliminar la imagen de la matriz de imágenes
+            const index = this.imagenes.indexOf(imagen);
+            //this.imagenes.splice(index,1);
+            console.log(index);
+            tarjeta[index].textContent = "";
+            console.log(imagen.id);
+            console.log("estoy llegando");
+            const options = {
+                method: "DELETE",
+                url: `https://upload.qbits.mx/api/up/delete-media/${imagen.id}`,
+                headers: {
+                    idMedia: imagen.id,
+                    IdUser: store.state.userData.idUser,
+                    jwt: store.state.userData.jwt,
+                },
+            };
+            console.log("estoy llegando");
+            axios
+                .request(options)
+                .then(function (response) {
+                    this.loader = "none";
+                    console.log(response.data);
+                    this.delete = response.data;
+                    location.reload();
+                })
+                .catch(function (error) {
+                    this.loader = "none";
+                    console.error(error);
+                });
         },
-    }
-};
+        muestraimg(Nombreimg) {
+            return `https://media.visitanos.net/image${Nombreimg}`;
+        },
+    },
+}
 </script>
 
 <style scoped>
 .ordenar img {
     display: block;
 }
+ 
+
 
 div.row {
     justify-content: center;

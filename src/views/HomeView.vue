@@ -3,7 +3,7 @@
   <SideBarComponent />
   <h1>Chambeaya - Portal de Oficios</h1>
   <main>
-
+    <div class="container">
     <section class="fotos pb-5">
       <article class="galeria">
         <div class="imagen1">
@@ -45,29 +45,25 @@
       </article>
     </section>
 
-    <div class="recommendations">
-
-<h2>Recomendaciones de usuarios</h2>
-
+    
+<div>
+<h2 class="pb-5">Recomendaciones de usuarios</h2>
 <div class="row">
   <div v-for="users in user" v-bind:key="users.id" class="col-md-3">
     <div class="text-center">
-      <img :src=inicio2+users.img width="90px" class="rounded-circle" alt="Usuario 1">
+      <img :src=inicio2+users.img style="width: 90px;" class="rounded-circle mb-4"/>
       <h3>{{users.nickname}}</h3>
     </div>
-    <div>
+    <div class="container ps-5 pe-5 mb-5">
       <p>{{users.recomienda}}</p>
     </div>
   </div>
 </div>
-
 </div>
-
-
     <section class="social">
       <div class="container">
         <h2>Síguenos en redes sociales</h2>
-        <div class="row mt-5">
+        <div class="row mt-3">
           <div class="col-md-3">
             <a href="https://www.facebook.com/chambeaya/"><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
           </div>
@@ -83,6 +79,8 @@
         </div>
       </div>
     </section>
+
+  </div>
   </main>
   <FooterComponent />
 </template>
@@ -92,7 +90,7 @@ import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue';
 import SideBarComponent from '@/components/SideBarComponent.vue';
 import users from './Recomienda.json';
-const url = 'http://127.0.0.1/'
+const url = 'http://192.168.0.5/'
 
 export default {
   components: {

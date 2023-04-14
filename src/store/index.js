@@ -43,6 +43,9 @@ const store = createStore({
         state.userData.jwt = data.jwt;
         state.userData.usuarioDetalle = data.usuarioDetalle;*/
     },
+    clearUserData(state) {
+      state.userData.nick = null;
+  },
     setDestination(state, destination) {
       state.destination = destination;
     },
