@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "src": "afilador.jpg",
+        "alt": "Imagen 1"
+    },
+    {
+        "id": 2,
+        "src": "camotero.jpg",
+        "alt": "Imagen 2"
+    },
+    {
+        "id": 3,
+        "src": "carpintero.jpg",
+        "alt": "Imagen 3"
+    },
+    {
+        "id": 4,
+        "src": "cartonero.jpg",
+        "alt": "Imagen 4"
+    },
+    {
+        "id": 5,
+        "src": "curandero.jpg",
+        "alt": "Imagen 5"
+    },
+    {
+        "id": 6,
+        "src": "globero.jpg",
+        "alt": "Imagen 6"
+    },
+    {
+        "id": 7,
+        "src": "organillero.jpg",
+        "alt": "Imagen 7"
+    },
+    {
+        "id": 8,
+        "src": "piñatero.jpg",
+        "alt": "Imagen 8"
+    },
+    {
+        "id": 9,
+        "src": "pulquero.jpg",
+        "alt": "Imagen 9"
+    },
+    {
+        "id": 10,
+        "src": "taquero.jpg",
+        "alt": "Imagen 10"
+    },
+    {
+        "id": 11,
+        "src": "tortillera.jpg",
+        "alt": "Imagen 11"
+    },
+    {
+        "id": 12,
+        "src": "zapatera.jpg",
+        "alt": "Imagen 12"
+    }
+]

@@ -20,9 +20,9 @@
 
 
                     </div>
-                    <li class="nav-item login">
-                        <span v-if="nick">{{ nick }}</span>
-                        <router-link v-else :to="{ name: 'login' }">Login</router-link>
+                    <li class="nav-item">
+                        <span class="login" style="padding: 9px 30px 9px 30px;" v-if="nick"> &nbsp; {{ nick }}</span>
+                        <router-link class="login" style="padding: 12px 30px 12px 30px;" v-else :to="{ name: 'login' }">Login</router-link>
                     </li>
                     <li class="nav-item sign">
                         <a v-on:click="handleLogout" class="nav-link" href="#">Logout</a>
@@ -87,8 +87,10 @@ export default {
 
 .login {
     width: 7rem;
-    margin: 2px;
+    height: 2.7rem;
+    margin: 4px;
     border: 2px solid;
     background: #ff9900c0;
+    text-decoration: none;
 }
 </style>

@@ -1,5 +1,3 @@
-GeneralData
-
 <template>
     <body>
         <HeaderComponent />
@@ -7,88 +5,73 @@ GeneralData
         <main class="container pt-5 hoja">
             <form style="text-align: center;">
                 <div class="container">
+                    
                     <div>
+                        <div>
                         <h1 class="text-center mb-5">Captura tus datos</h1>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <label class="mt-4 mb-2">
-                                    <div >
-                                        Foto de perfil:
+                    <div class="form-group">
+                                    <label class="mt-3">Foto de perfil:</label>
+                                    <div>
+                                        <a href="/ui/upload-pro">hola</a>
+                                        <div class="elemento position-relative">
+                                            <img :src="imagenperfil(imagen.fullHttpUploadUrl)" alt="" class="rounded img" />
+                                            <i class="fa-solid fa-trash" style="color: #ff24247c"
+                                                @click="elimina(imagen)"></i>
+                                        </div>
                                     </div>
-
-<div></div>
-
-                                </label>
-                                <div>
-                                    <a href="/ui/upload-pro">hola</a>
-                                    <div class="elemento position-relative">
-                                        <img :src="muestraimg(imagen.fullHttpUploadUrl)" alt="" class="rounded img" />
-                                        <i class="fa-solid fa-trash" style="color: #ff24247c" @click="elimina(imagen)"></i>
-                                    </div>
-
-
-
-
-
-
-
-
-                                    
                                 </div>
-                            </div>
-                            <label class="pt-3">
-                                Nombre<span class="required red">*</span>:
-                                <input type="text" placeholder="Ingresa tu nombre" required class="form-control" />
-                            </label>
-                            <br />
-                            <div class="d-flex flex-column flex-sm-row mt-4">
-                                <label class="me-sm-4">
-                                    Apellido Paterno<span class="required red">*</span>:
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="mt-3">Nombre<span class="required red">*</span>:</label>
+                                    <input type="text" placeholder="Ingresa tu nombre" required class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="mt-3">Apellido Paterno<span class="required red">*</span>:</label>
                                     <input class="mt-3 form-control" type="text" placeholder="Ingresa tu apellido paterno"
                                         required />
-                                </label>
-                                <label class="ms-sm-4 mt-3 mt-sm-0">
-                                    Apellido Materno:
+                                </div>
+                                <div class="form-group">
+                                    <label class="mt-3">Apellido Materno:</label>
                                     <input class="mt-3 form-control" type="text" placeholder="Ingresa tu apellido materno"
                                         v-model="apellidoMaterno" />
-                                </label>
+                                </div>
                             </div>
-                            <br />
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="d-flex flex-column flex-sm-row mt-4">
-                                <label class="me-sm-4">
-                                    Número telefónico personal<span class="required red">*</span>:
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="mt-3">Número telefónico personal<span
+                                            class="required red">*</span>:</label>
                                     <input class="mt-3 form-control" type="tel" placeholder="1122 334 455" required />
-                                </label>
-                                <label class="ms-sm-4 mt-3 mt-sm-0">
-                                    Correo electrónico personal<span class="required red">*</span>:
+                                </div>
+                                <div class="form-group">
+                                    <label class="mt-3">Correo electrónico personal<span
+                                            class="required red">*</span>:</label>
                                     <input class="mt-3 form-control" type="email" placeholder="pedroparamo@gmail.com"
                                         required />
-                                </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="mt-3">Fecha de nacimiento<span class="required red">*</span>:</label>
+                                    <input type="date" required class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="mt-3">Código postal personal<span class="required red">*</span>:</label>
+                                    <input class="col-2 form-control" type="text" placeholder="00000" required />
+                                </div>
                             </div>
-                            <br />
-                            <label class="mt-5">
-                                Fecha de nacimiento<span class="required red">*</span>:
-                                <input type="date" required class="form-control" />
-                            </label>
-                            <br />
-                            <label class="mt-4">
-                                Código postal personal<span class="required red">*</span>:
-                                <input class="col-2 form-control" type="text" placeholder="00000" required />
-                            </label>
-                            <br />
                         </div>
                     </div>
+
+
                 </div>
 
-                <label class="mt-4">
+                <div class="mt-4">
                     ¿Eres anunciante?
                     <input type="checkbox" v-model="esAnunciante" />
-                </label>
-                <br />
+                </div>
 
                 <div v-if="esAnunciante" style="text-align: justify;">
                     <div class="row mt-4">
@@ -122,6 +105,7 @@ GeneralData
                         </div>
                     </div>
                 </div>
+
 
                 <div class="d-grid pb-5 mt-5 col-2 mx-auto">
                     <button type="submit" class="btn btn1">Enviar</button>
@@ -207,7 +191,7 @@ export default {
                     console.error(error);
                 });
         },
-        muestraimg(Nombreimg) {
+        imagenperfil(Nombreimg) {
             return `https://media.visitanos.net/image${Nombreimg}`;
         },
     },
@@ -215,6 +199,108 @@ export default {
 </script>
 
 <style scoped>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #003366;
+}
+
+form {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #F2F2F2;
+}
+
+input[type="submit"] {
+    background-color: #003366;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #004080;
+}
+
+.required {
+    color: #FF0000;
+}
+
+.col-2 {
+    width: 40%;
+}
+
+@media screen and (max-width: 767px) {
+    form {
+        padding: 20px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="password"],
+    select,
+    textarea {
+        font-size: 14px;
+    }
+
+    .col-2 {
+        width: 60%;
+    }
+}
+
 form {
     display: flex;
     flex-direction: column;

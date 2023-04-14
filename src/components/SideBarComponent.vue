@@ -5,11 +5,11 @@
       <SidebarLinks to="/" class="mb-1 d-flex align-items-center justify-content-between">
         <div><i class="fa-sharp fa-solid fa-house me-1"></i>Home</div>
       </SidebarLinks>
-      <SidebarLinks to="/ui/payment" class="mb-2 d-flex align-items-center justify-content-between">
-        <div><i class="fa-sharp fa-solid fa-credit-card me-1"></i>Pago</div>
-      </SidebarLinks>
       <SidebarLinks to="/ui/general-data" class="mb-2 d-flex align-items-center justify-content-between">
         <div><i class="fa-solid fa-user me-1"></i>Datos</div>
+      </SidebarLinks>
+      <SidebarLinks to="/ui/payment" class="mb-2 d-flex align-items-center justify-content-between">
+        <div><i class="fa-sharp fa-solid fa-credit-card me-1"></i>Pago</div>
       </SidebarLinks>
       <SidebarLinks to="/ui/official-doc" class="mb-2 d-flex align-items-center justify-content-between">
         <div><i class="fa-regular fa-id-card me-1"></i>INE</div>
