@@ -14,6 +14,7 @@ import GeneralDataView from '@/views/GeneralDataView'
 import PostAdView from '@/views/PostAdView'
 import TermsConditionsView from '@/views/TermsConditionsView'
 import MainMenuView from '@/views/MainMenuView'
+import DatosUsuarioView from '@/views/DatosUsuarioView'
 import HomeView from "@/views/HomeView";
 import UploadImageView from "@/views/UploadImageView";
 import UploadImageProView from "@/views/UploadImageProView";
@@ -46,6 +47,11 @@ const routes = [
     path: '/ui/general-data',
     name: 'general-data',
     component: GeneralDataView
+  },
+  {
+    path: '/ui/datosUsuario',
+    name: 'datosUsuario',
+    component: DatosUsuarioView
   },
   {
     path: '/ui/official-doc',
