@@ -18,7 +18,7 @@ import DatosUsuarioView from '@/views/DatosUsuarioView'
 import HomeView from "@/views/HomeView";
 import UploadImageView from "@/views/UploadImageView";
 import UploadImageProView from "@/views/UploadImageProView";
-
+import PostadImageView from '@/views/PostadImageView'; 
 
 const routes = [
 
@@ -31,37 +31,50 @@ const routes = [
   {
     path: '/ui/payment',
     name: 'payment',
-    component: PaymentMethodsView
+    component: PaymentMethodsView,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/upload-pro',
     name: 'upload-pro',
-    component: UploadImageProView
+    component: UploadImageProView,
+    meta: { allowedRoles: ["admin", "regular"] },
+  },
+  {
+    path: '/ui/post-img',
+    name: 'post-img',
+    component: PostadImageView,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/upload',
     name: 'upload',
-    component: UploadImageView
+    component: UploadImageView,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/general-data',
     name: 'general-data',
-    component: GeneralDataView
+    component: GeneralDataView,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/datosUsuario',
     name: 'datosUsuario',
-    component: DatosUsuarioView
+    component: DatosUsuarioView,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/official-doc',
     name: 'official-doc',
-    component: OfficialDocUpLoad
+    component: OfficialDocUpLoad,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/post',
     name: 'post',
-    component: PostAdView
+    component: PostAdView,
+    meta: { allowedRoles: ["admin", "regular"] },
   },
   {
     path: '/ui/login',
